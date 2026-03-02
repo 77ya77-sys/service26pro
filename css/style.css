@@ -257,13 +257,53 @@ h3 {
     box-shadow: 0 10px 20px rgba(255, 98, 0, 0.2);
 }
 
-.trust-microtext {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 8px;
+.trust-microtext,
+.status-indicator-hero {
+    font-size: 0.8125rem;
+    color: var(--text-main);
+    margin-top: 16px;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.status-indicator-hero {
+    margin-top: 12px;
+}
+
+.status-dot-pulse {
+    width: 6px;
+    height: 6px;
+    background: #10B981;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.status-dot-pulse::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: #10B981;
+    opacity: 0.3;
+    animation: status-pulse 2s infinite ease-out;
+}
+
+@keyframes status-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
 }
 
 /* STICKY CTA */
